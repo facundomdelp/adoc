@@ -9,7 +9,7 @@ const Empresa = () => {
         temporibus eaque perspiciatis facere accusantium veritatis enim accusamus, sapiente optio dolorum voluptatum
         blanditiis cupiditate incidunt.
       </p>
-      <div className='space-y-6 md:columns-3 md:space-x-6'>
+      <div className='space-y-6 md:columns-3 md:space-x-6 max-w-[1200px]'>
         <article>
           <h2 className='text-lg font-bold'>Lorem</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio vitae fugit quae ratione, dolorem ipsa?</p>
