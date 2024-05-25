@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
 interface LogoProps {
-  variant?: 'bordeaux_black' | 'white'
+  variant?: 'bordeaux_black' | 'white_mini'
   className?: string
 }
 
