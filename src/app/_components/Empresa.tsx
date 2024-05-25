@@ -1,7 +1,9 @@
+import Heading from '@/components/domain/Heading'
+
 const Empresa = () => {
   return (
     <section id='empresa' className='mx-12 my-32 min-h-[300px] flex flex-col items-center justify-center text-center'>
-      <h1 className='uppercase'>Empresa</h1>
+      <Heading>Empresa</Heading>
       <p className='max-w-[700px] mb-12'>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, consequuntur. Quae ab, quibusdam veniam fuga
         temporibus eaque perspiciatis facere accusantium veritatis enim accusamus, sapiente optio dolorum voluptatum

@@ -18,6 +18,7 @@ export const NavBar = ({
   className?: string
 }) => {
   const [drawerOpen, setDrawerOpen] = useState(opened)
+
   useEffect(() => {
     setDrawerOpen(opened)
   }, [opened])

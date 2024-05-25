@@ -40,7 +40,9 @@ const Header = () => {
         )}
       >
         <NavBar links={navigationLinks} className='md:hidden' />
-        <Logo className='my-3 cursor-pointer shrink-0' />
+        <Link href='/'>
+          <Logo className='my-3 cursor-pointer shrink-0' />
+        </Link>
         <nav className='grow max-w-[600px] hidden md:flex'>
           <ul className='flex grow gap-4 justify-between py-8'>
             {navigationLinks.map(({ text }, index) => (

@@ -21,3 +21,12 @@
   @apply scale-x-100;
   transform-origin: bottom left;
 }
+
+.adoc-underline {
+  @apply inline-block relative;
+}
+
+.adoc-underline::after {
+  @apply absolute w-[75%] h-1 bottom-[-8px] left-1/2 translate-x-[-50%] bg-bordeaux;
+  content: '';
+}
