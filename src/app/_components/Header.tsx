@@ -5,19 +5,26 @@ import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { useState } from 'react'
 import { Waypoint } from 'react-waypoint'
+import { NavBar } from './NavBar'
+import { Button } from '@/components/ui/button'
+import { Equal } from 'lucide-react'
 
 const navigationLinks = [
   {
-    name: 'Empresa',
+    text: 'Empresa',
+    href: '#',
   },
   {
-    name: 'Productos',
+    text: 'Productos',
+    href: '#',
   },
   {
-    name: 'Servicios',
+    text: 'Servicios',
+    href: '#',
   },
   {
-    name: 'Contacto',
+    text: 'Contacto',
+    href: '#',
   },
 ]
 
@@ -29,20 +36,24 @@ const Header = () => {
     <>
       <div
         className={cn(
-          'flex items-center px-16 justify-between fixed z-50 bg-white drop-shadow-md w-full font-medium text-black transition-all',
-          animate ? 'opacity-70 top-0' : 'opacity-0 top-[-100%]'
+          'flex items-center justify-between fixed z-50 bg-white drop-shadow-md w-full font-medium text-black transition-all md:gap-24 px-6 md:px-16',
+          animate ? 'opacity-90 top-0' : 'opacity-0 top-[-100%]'
         )}
       >
-        <Logo className='my-6 cursor-pointer' />
-        <nav className='flex-grow max-w-[800px] '>
-          <ul className='flex gap-4 justify-between py-8'>
-            {navigationLinks.map(({ name }, index) => (
-              <li key={`${index}-${name}`} className='hover-underline-animation'>
-                <Link href='#'>{name}</Link>
+        <NavBar links={navigationLinks} className='md:hidden' />
+        <Logo className='my-3 cursor-pointer shrink-0' />
+        <nav className='grow max-w-[600px] hidden md:flex'>
+          <ul className='flex grow gap-4 justify-between py-8'>
+            {navigationLinks.map(({ text }, index) => (
+              <li key={`${index}-${text}`} className='hover-underline-animation'>
+                <Link href='#'>{text}</Link>
               </li>
             ))}
           </ul>
         </nav>
+        <Button variant='ghost' size='icon' aria-label='Open navigation menu' className='invisible md:hidden'>
+          <Equal className='size-6 sm:size-9' />
+        </Button>
       </div>
       <Waypoint onLeave={() => setAnimate(true)} bottomOffset='1000px' />
     </>

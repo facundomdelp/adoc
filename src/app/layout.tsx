@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='es'>
-      <body className={cn(gotham.className, '')}>
+      <body className={cn(gotham.className, 'bg-black text-white')}>
         <Header />
         {children}
       </body>
