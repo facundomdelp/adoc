@@ -1,3 +1,5 @@
+'use client'
+
 import Onboarding from './_components/Onboarding'
 import Empresa from './_components/Empresa'
 import Productos from './_components/Productos'

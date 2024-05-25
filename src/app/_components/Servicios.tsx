@@ -4,8 +4,8 @@ import Image from 'next/image'
 const Servicios = () => {
   return (
     <section
-      id='empresa'
-      className='mx-12 my-32 min-h-[500px] flex flex-col items-center justify-center text-center md:text-justify'
+      id='servicios'
+      className='m-12 pt-32 mb-32 flex flex-col items-center justify-center text-center md:text-justify'
     >
       <Heading>Servicios</Heading>
       <div className='flex flex-col md:flex-row gap-8 md:gap-20 items-center md:items-start'>

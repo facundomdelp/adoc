@@ -59,7 +59,7 @@ const Productos = () => {
   const [hovered, setHovered] = useState(-1)
 
   return (
-    <section className='w-full flex flex-col items-center justify-center my-32'>
+    <section id='productos' className='w-full flex flex-col items-center justify-center pt-32 mb-32'>
       <Heading>Productos</Heading>
       <ul className='flex flex-wrap gap-4 items-center justify-center w-full m-2'>
         {PRODUCTOS.map(({ name, slug }, index) => (

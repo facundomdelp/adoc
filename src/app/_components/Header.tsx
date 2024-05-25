@@ -3,7 +3,7 @@
 import Logo from '@/components/domain/Logo'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Waypoint } from 'react-waypoint'
 import { NavBar } from './NavBar'
 import { Button } from '@/components/ui/button'
@@ -12,19 +12,19 @@ import { Equal } from 'lucide-react'
 const navigationLinks = [
   {
     text: 'Empresa',
-    href: '#',
+    href: '#empresa',
   },
   {
     text: 'Productos',
-    href: '#',
+    href: '#productos',
   },
   {
     text: 'Servicios',
-    href: '#',
+    href: '#servicios',
   },
   {
     text: 'Contacto',
-    href: '#',
+    href: '#contacto',
   },
 ]
 
@@ -45,9 +45,9 @@ const Header = () => {
         </Link>
         <nav className='grow max-w-[600px] hidden md:flex'>
           <ul className='flex grow gap-4 justify-between py-8'>
-            {navigationLinks.map(({ text }, index) => (
+            {navigationLinks.map(({ text, href }, index) => (
               <li key={`${index}-${text}`} className='hover-underline-animation'>
-                <Link href='#'>{text}</Link>
+                <Link href={href}>{text}</Link>
               </li>
             ))}
           </ul>

@@ -12,15 +12,15 @@ const CONTACT_INFO = [
 const Contacto = () => {
   return (
     <section
-      id='empresa'
-      className='mx-12 my-32 min-h-[500px] flex flex-col items-center justify-center text-center md:text-justify'
+      id='contacto'
+      className='pt-32 mb-32 min-h-[500px] flex flex-col items-center justify-center text-center md:text-justify'
     >
       <Heading>Contacto</Heading>
-      <div>
-        <ul className='max-w-[500px] space-y-4 text-lg'>
+      <div className='flex gap-16 items-center justify-center flex-col lg:flex-row'>
+        <ul className='max-w-[500px] space-y-8 text-base sm:text-lg'>
           {CONTACT_INFO.map(({ slug, Icon, data, link }) => (
-            <li key={slug} className='flex gap-3 items-center cursor-default'>
-              <Icon size={18} />
+            <li key={slug} className='flex gap-4 items-center cursor-default text-center justify-center lg:justify-end'>
+              <Icon size={18} className='lg:hidden' />
               {link ? (
                 <a href={link} className='hover:underline' target='_blank'>
                   {data}
@@ -28,12 +28,28 @@ const Contacto = () => {
               ) : (
                 data
               )}
+              <Icon size={18} className='hidden lg:block' />
             </li>
           ))}
         </ul>
-        <iframe src='https://www.google.com/maps/place/-34.452534,+-58.945800/@-34.4524533,-58.9454567,19z/data=!4m4!3m3!8m2!3d-34.452534!4d-58.9458' />
+        <GoogleMap />
       </div>
     </section>
+  )
+}
+
+const GoogleMap = () => {
+  return (
+    <div className='max-w-[100%] list-none transition-none overflow-hidden w-[300px] h-[300px] sm:w-[350px] sm:h-[350px]'>
+      <div id='gmap-canvas' className='h-[100%] w-[100%] max-w-[100%]'>
+        <iframe
+          className='h-[100%] w-[100%] border-none'
+          frameBorder='0'
+          src='https://www.google.com/maps/embed/v1/search?q=Vélez+Sársfield+192,+Pilar,+Provincia+de+Buenos+Aires&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8'
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
   )
 }
 

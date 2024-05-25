@@ -23,7 +23,7 @@ export const NavBar = ({
     setDrawerOpen(opened)
   }, [opened])
 
-  const closeDrawer = useCallback(() => {
+  const handleNavigation = useCallback(() => {
     setDrawerOpen(false)
   }, [])
 
@@ -38,14 +38,11 @@ export const NavBar = ({
         <header className='border-black border-b mb-4'>
           <Logo className='mb-6' />
         </header>
-
         <nav>
           <ul>
-            {links.map(({ text, href }) => (
-              <li key={href} className='my-8 font-medium'>
-                <Link href={href} onClick={closeDrawer} className='hover:underline'>
-                  {text}
-                </Link>
+            {links.map(({ text, href }, index) => (
+              <li key={`${index}-${text}`} onClick={handleNavigation} className='my-8 font-medium'>
+                <Link href={href}>{text}</Link>
               </li>
             ))}
           </ul>
