@@ -1,9 +1,10 @@
 'use client'
 
 import Logo from '@/components/domain/Logo'
+import SocialMedia from '@/components/domain/SocialMedia'
 import { Button } from '@/components/ui/button'
 import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
-import { Equal } from 'lucide-react'
+import { Equal, InstagramIcon, MailIcon } from 'lucide-react'
 import Link from 'next/link'
 import { ReactNode, useCallback, useEffect, useState } from 'react'
 
@@ -47,6 +48,7 @@ export const NavBar = ({
             ))}
           </ul>
         </nav>
+        <SocialMedia className='mt-auto mb-6' />
       </DrawerContent>
     </Drawer>
   )

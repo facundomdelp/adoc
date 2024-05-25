@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { cn } from '@/lib/utils'
 import { gotham } from '@/lib/fonts'
 import Header from './_components/Header'
+import Footer from './_components/Footer'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={cn(gotham.className, 'bg-black text-white')}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
