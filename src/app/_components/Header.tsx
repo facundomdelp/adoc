@@ -30,7 +30,6 @@ const navigationLinks = [
 
 const Header = () => {
   const [animate, setAnimate] = useState(false)
-  console.log('👽 ~ Header ~ animate:', animate)
 
   return (
     <>
