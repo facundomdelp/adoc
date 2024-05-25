@@ -6,7 +6,7 @@ const IMAGES = ['steel-mesh', 'stones', 'bricks', 'sand', 'steel-profiles', 'squ
 
 const Onboarding = () => {
   return (
-    <div className='relative flex overflow-hidden justify-center'>
+    <section className='relative flex overflow-hidden justify-center'>
       {IMAGES.map((name, index) => (
         <div
           key={`${index}-${name}`}
@@ -24,13 +24,13 @@ const Onboarding = () => {
           height={250}
           src='/logos/adoc_bordeaux_white_text.png'
           alt='Logo Adoc'
-          className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-20'
+          className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-20 shrink px-4'
         />
       </div>
       <Link href='#empresa' className='absolute bottom-4 text-white cursor-pointer scroll-smooth'>
         <ChevronDown className='size-12' />
       </Link>
-    </div>
+    </section>
   )
 }
 
