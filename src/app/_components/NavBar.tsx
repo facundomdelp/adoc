@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
 import { Equal, InstagramIcon, MailIcon } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { ReactNode, useCallback, useEffect, useState } from 'react'
 
 export const NavBar = ({
@@ -20,13 +21,30 @@ export const NavBar = ({
 }) => {
   const [drawerOpen, setDrawerOpen] = useState(opened)
 
+  const router = useRouter()
+
+  const closeDrawer = useCallback(() => {
+    setDrawerOpen(false)
+  }, [])
+
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const { hash } = new URL(e.currentTarget.href)
+
+    if (hash) {
+      e.preventDefault()
+
+      setTimeout(() => {
+        const targetElement = document.querySelector(hash)
+        targetElement?.scrollIntoView({ behavior: 'smooth' })
+      }, 400)
+    }
+
+    closeDrawer()
+  }
+
   useEffect(() => {
     setDrawerOpen(opened)
   }, [opened])
-
-  const handleNavigation = useCallback(() => {
-    setDrawerOpen(false)
-  }, [])
 
   return (
     <Drawer direction='left' open={drawerOpen} onOpenChange={setDrawerOpen}>
@@ -42,8 +60,10 @@ export const NavBar = ({
         <nav>
           <ul>
             {links.map(({ text, href }, index) => (
-              <li key={`${index}-${text}`} onClick={handleNavigation} className='my-8 font-medium'>
-                <Link href={href}>{text}</Link>
+              <li key={`${index}-${text}`} className='my-8 font-medium'>
+                <Link href={href} onClick={handleNavigation}>
+                  {text}
+                </Link>
               </li>
             ))}
           </ul>
