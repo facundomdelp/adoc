@@ -10,7 +10,7 @@ const Onboarding = () => {
       {IMAGES.map((name, index) => (
         <div
           key={`${index}-${name}`}
-          className='h-[100vh] h-[100dvh] grow bg-no-repeat min-w-[150px]'
+          className='h-[100dvh] h-[100vh] grow bg-no-repeat min-w-[150px]'
           style={{
             backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/images/${name}.jpg")`,
             backgroundSize: 'cover',
