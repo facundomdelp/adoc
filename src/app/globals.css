@@ -31,7 +31,7 @@
   content: '';
 }
 
-.dynamic-viewheight {
+.dynamic-100vh {
   height: 100vh;
   height: 100dvh;
 }
