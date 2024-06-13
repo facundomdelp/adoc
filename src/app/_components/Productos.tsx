@@ -84,8 +84,6 @@ const Producto = ({ slug, name }: ProductoProps) => {
 
   return (
     <>
-      <Waypoint onEnter={() => setAnimate(true)} bottomOffset='20%' />
-
       <li
         className={cn(
           'relative bg-no-repeat w-[20%] min-w-[40%] aspect-[3/2] sm:min-w-[30%] md:min-w-[20%] bg-cover transition-all',
@@ -98,6 +96,7 @@ const Producto = ({ slug, name }: ProductoProps) => {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
+        <Waypoint onEnter={() => setAnimate(true)} />
         <p
           className={cn(
             'absolute inset-0 bg-bordeaux transition-all flex items-center justify-center text-lg duration-300 uppercase text-center p-4 break-words',

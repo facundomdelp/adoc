@@ -21,16 +21,16 @@ export default function Home() {
     <main>
       <Onboarding />
 
-      <Waypoint onEnter={() => setAnimate({ ...animate, empresa: true })} bottomOffset='20%' />
+      <Waypoint onEnter={() => setAnimate({ ...animate, empresa: true })} />
       <Empresa className={cn('opacity-0', animate.empresa && 'animate-slide-up')} />
 
-      <Waypoint onEnter={() => setAnimate({ ...animate, productos: true })} bottomOffset='20%' />
+      <Waypoint onEnter={() => setAnimate({ ...animate, productos: true })} />
       <Productos className={cn('opacity-0', animate.productos && 'animate-slide-up')} />
 
-      <Waypoint onEnter={() => setAnimate({ ...animate, servicios: true })} bottomOffset='20%' />
+      <Waypoint onEnter={() => setAnimate({ ...animate, servicios: true })} />
       <Servicios className={cn('opacity-0', animate.servicios && 'animate-slide-up')} />
 
-      <Waypoint onEnter={() => setAnimate({ ...animate, contacto: true })} bottomOffset='20%' />
+      <Waypoint onEnter={() => setAnimate({ ...animate, contacto: true })} />
       <Contacto className={cn('opacity-0', animate.contacto && 'animate-slide-up')} />
     </main>
   )
