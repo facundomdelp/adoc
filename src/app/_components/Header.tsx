@@ -3,11 +3,11 @@
 import Logo from '@/components/domain/Logo'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Waypoint } from 'react-waypoint'
 import { NavBar } from './NavBar'
 import { Button } from '@/components/ui/button'
-import { Equal, InstagramIcon, MailIcon } from 'lucide-react'
+import { Equal } from 'lucide-react'
 import SocialMedia from '@/components/domain/SocialMedia'
 
 const navigationLinks = [

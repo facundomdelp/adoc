@@ -14,16 +14,19 @@ const Empresa = () => {
       </p>
       <div className='space-y-6 md:columns-3 md:space-x-6 max-w-[1200px]'>
         <article>
-          <h2 className='text-lg font-bold'>Lorem</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio vitae fugit quae ratione, dolorem ipsa?</p>
+          <h2 className='text-lg font-bold'>Entregas</h2>
+          <p>Entregamos en todo Zona Norte y Capital Federal.</p>
         </article>
         <article>
-          <h2 className='text-lg font-bold'>Lorem</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio vitae fugit quae ratione, dolorem ipsa?</p>
+          <h2 className='text-lg font-bold'>Venta Minorista y Mayorista</h2>
+          <p>
+            Realizamos ventas a consumidor final, obras y desarrollos inmobiliarios; así como también ventas al por
+            mayor a empresas del rubro.
+          </p>
         </article>
         <article>
-          <h2 className='text-lg font-bold'>Lorem</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio vitae fugit quae ratione, dolorem ipsa?</p>
+          <h2 className='text-lg font-bold'>Acopio</h2>
+          <p>Brindamos servicio de acopio acorde a las necesidades y plazos puntuales de cada cliente.</p>
         </article>
       </div>
     </section>

@@ -30,28 +30,28 @@ const PRODUCTOS = [
     slug: 'stones',
   },
   {
-    name: 'Ladrillos',
-    slug: 'bricks',
+    name: 'Chapa',
+    slug: 'sheet-steel',
   },
   {
-    name: 'Arena',
-    slug: 'sand',
+    name: 'Alambre',
+    slug: 'wire',
   },
   {
-    name: 'Ladrillo Hueco',
-    slug: 'square-brick',
+    name: 'Clavos',
+    slug: 'nails',
   },
   {
-    name: 'Mallas',
-    slug: 'steel-mesh',
+    name: 'Pegamentos',
+    slug: 'glues',
   },
   {
-    name: 'Hierro',
-    slug: 'steel-profiles',
+    name: 'Cemento',
+    slug: 'cement',
   },
   {
-    name: 'Piedra',
-    slug: 'stones',
+    name: 'Impermea<wbr>bilizantes',
+    slug: 'water-proofing',
   },
 ]
 
@@ -76,12 +76,11 @@ const Productos = () => {
           >
             <p
               className={cn(
-                'absolute inset-0 bg-bordeaux transition-all flex items-center justify-center text-lg duration-300 uppercase',
+                'absolute inset-0 bg-bordeaux transition-all flex items-center justify-center text-lg duration-300 uppercase text-center p-4 break-words',
                 hovered === index ? 'opacity-1' : 'opacity-0'
               )}
-            >
-              {name}
-            </p>
+              dangerouslySetInnerHTML={{ __html: name }}
+            />
           </li>
         ))}
       </ul>
