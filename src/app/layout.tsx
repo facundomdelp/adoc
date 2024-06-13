@@ -18,9 +18,14 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <head>
-        <link rel='icon' href='/favicon.ico' sizes='any' />
-        <link rel='icon' href='/icon?<generated>' type='image/<generated>' sizes='<generated>' />
-        <link rel='apple-touch-icon' href='/apple-icon?<generated>' type='image/<generated>' sizes='<generated>' />
+        <link rel='icon' href='/manifest/favicon.ico' sizes='any' />
+        <link rel='icon' href='/manifest/icon?<generated>' type='image/<generated>' sizes='<generated>' />
+        <link
+          rel='apple-touch-icon'
+          href='/manifest/apple-icon?<generated>'
+          type='image/<generated>'
+          sizes='<generated>'
+        />
       </head>
       <body className={cn(gotham.className, 'bg-black text-white')}>
         <Header />
