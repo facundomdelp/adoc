@@ -1,4 +1,5 @@
 import Heading from '@/components/domain/Heading'
+import { cn } from '@/lib/utils'
 import { InstagramIcon, MailIcon, MapPin, PhoneIcon } from 'lucide-react'
 
 const CONTACT_INFO = [
@@ -9,11 +10,18 @@ const CONTACT_INFO = [
   { slug: 'address', Icon: MapPin, data: 'AU Ramal Pilar, KM 57', link: '' },
 ]
 
-const Contacto = () => {
+interface ContactoProps {
+  className?: string
+}
+
+const Contacto = ({ className }: ContactoProps) => {
   return (
     <section
       id='contacto'
-      className='pt-32 mb-32 min-h-[500px] flex flex-col items-center justify-center text-center md:text-justify'
+      className={cn(
+        'pt-32 mb-32 min-h-[500px] flex flex-col items-center justify-center text-center md:text-justify',
+        className
+      )}
     >
       <Heading>Contacto</Heading>
       <div className='flex gap-16 items-center justify-center flex-col lg:flex-row'>

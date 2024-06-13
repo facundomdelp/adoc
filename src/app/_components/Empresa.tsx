@@ -1,10 +1,15 @@
 import Heading from '@/components/domain/Heading'
+import { cn } from '@/lib/utils'
 
-const Empresa = () => {
+interface EmpresaProps {
+  className?: string
+}
+
+const Empresa = ({ className }: EmpresaProps) => {
   return (
     <section
       id='empresa'
-      className='mx-12 pt-32 mb-32 min-h-[500px] flex flex-col items-center justify-center text-center'
+      className={cn('mx-12 pt-32 mb-32 min-h-[500px] flex flex-col items-center justify-center text-center', className)}
     >
       <Heading>Empresa</Heading>
       <p className='max-w-[700px] mb-12'>

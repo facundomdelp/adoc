@@ -3,6 +3,7 @@
 import Heading from '@/components/domain/Heading'
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
+import { Waypoint } from 'react-waypoint'
 
 const PRODUCTOS = [
   {
@@ -55,36 +56,57 @@ const PRODUCTOS = [
   },
 ]
 
-const Productos = () => {
-  const [hovered, setHovered] = useState(-1)
+interface ProductosProps {
+  className?: string
+}
 
+const Productos = ({ className }: ProductosProps) => {
   return (
-    <section id='productos' className='w-full flex flex-col items-center justify-center pt-32 mb-32'>
+    <section id='productos' className={cn('w-full flex flex-col items-center justify-center pt-32 mb-32', className)}>
       <Heading>Productos</Heading>
       <ul className='flex flex-wrap gap-4 items-center justify-center w-full m-2'>
         {PRODUCTOS.map(({ name, slug }, index) => (
-          <li
-            key={`${index}-${slug}`}
-            className={cn(
-              'relative bg-no-repeat w-[20%] min-w-[40%] aspect-[3/2] sm:min-w-[30%] md:min-w-[20%] bg-cover transition-all'
-            )}
-            style={{
-              backgroundImage: `url("/images/${slug}.jpg")`,
-            }}
-            onMouseEnter={() => setHovered(index)}
-            onMouseLeave={() => setHovered(-1)}
-          >
-            <p
-              className={cn(
-                'absolute inset-0 bg-bordeaux transition-all flex items-center justify-center text-lg duration-300 uppercase text-center p-4 break-words',
-                hovered === index ? 'opacity-1' : 'opacity-0'
-              )}
-              dangerouslySetInnerHTML={{ __html: name }}
-            />
-          </li>
+          <Producto key={`${index}-${slug}`} slug={slug} name={name} />
         ))}
       </ul>
     </section>
+  )
+}
+
+interface ProductoProps {
+  slug: string
+  name: string
+}
+
+const Producto = ({ slug, name }: ProductoProps) => {
+  const [hovered, setHovered] = useState(false)
+  const [animate, setAnimate] = useState(false)
+
+  return (
+    <>
+      <Waypoint onEnter={() => setAnimate(true)} bottomOffset='20%' />
+
+      <li
+        className={cn(
+          'relative bg-no-repeat w-[20%] min-w-[40%] aspect-[3/2] sm:min-w-[30%] md:min-w-[20%] bg-cover transition-all',
+          'opacity-0',
+          animate && 'animate-fade-in'
+        )}
+        style={{
+          backgroundImage: `url("/images/${slug}.jpg")`,
+        }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <p
+          className={cn(
+            'absolute inset-0 bg-bordeaux transition-all flex items-center justify-center text-lg duration-300 uppercase text-center p-4 break-words',
+            hovered ? 'opacity-1' : 'opacity-0'
+          )}
+          dangerouslySetInnerHTML={{ __html: name }}
+        />
+      </li>
+    </>
   )
 }
 

@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -24,10 +25,19 @@ const Onboarding = () => {
           height={250}
           src='/logos/adoc_bordeaux_white_text.png'
           alt='Logo Adoc'
-          className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-20 shrink px-4'
+          className={cn(
+            'absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-20 shrink px-4',
+            'opacity-0 animate-fade-in delay-1000'
+          )}
         />
       </div>
-      <Link href='#empresa' className='absolute bottom-4 text-white cursor-pointer scroll-smooth'>
+      <Link
+        href='#empresa'
+        className={cn(
+          'absolute bottom-4 text-white cursor-pointer scroll-smooth',
+          'opacity-0 animate-fade-in delay-1000'
+        )}
+      >
         <ChevronDown className='size-12' />
       </Link>
     </section>

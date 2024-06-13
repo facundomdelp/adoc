@@ -30,14 +30,12 @@ const navigationLinks = [
 ]
 
 const Header = () => {
-  const [animate, setAnimate] = useState(false)
-
   return (
     <>
       <div
         className={cn(
-          'flex items-center justify-between fixed z-50 bg-white drop-shadow-md w-full font-medium text-black transition-all md:gap-16 px-6 md:px-12',
-          animate ? 'opacity-90 top-0' : 'opacity-0 top-[-100%]'
+          'flex items-center justify-between fixed z-50 bg-white drop-shadow-md w-full font-medium text-black transition-all md:gap-16 px-6 md:px-12 opacity-90',
+          'animate-navbar-fade-in delay-1000'
         )}
       >
         <NavBar links={navigationLinks} className='md:hidden' />
@@ -60,7 +58,6 @@ const Header = () => {
           <Equal className='size-6 sm:size-9' />
         </Button>
       </div>
-      <Waypoint onLeave={() => setAnimate(true)} bottomOffset='1000px' />
     </>
   )
 }

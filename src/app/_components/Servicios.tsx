@@ -1,11 +1,19 @@
 import Heading from '@/components/domain/Heading'
+import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
-const Servicios = () => {
+interface ServiciosProps {
+  className?: string
+}
+
+const Servicios = ({ className }: ServiciosProps) => {
   return (
     <section
       id='servicios'
-      className='m-12 pt-32 mb-32 flex flex-col items-center justify-center text-center md:text-justify'
+      className={cn(
+        'm-12 pt-32 mb-32 flex flex-col items-center justify-center text-center md:text-justify',
+        className
+      )}
     >
       <Heading>Servicios</Heading>
       <div className='flex flex-col md:flex-row gap-8 md:gap-20 items-center md:items-start'>
