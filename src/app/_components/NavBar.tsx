@@ -4,7 +4,7 @@ import Logo from '@/components/domain/Logo'
 import SocialMedia from '@/components/domain/SocialMedia'
 import { Button } from '@/components/ui/button'
 import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
-import { Equal, InstagramIcon, MailIcon } from 'lucide-react'
+import { Equal } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { ReactNode, useCallback, useEffect, useState } from 'react'
@@ -20,8 +20,6 @@ export const NavBar = ({
   className?: string
 }) => {
   const [drawerOpen, setDrawerOpen] = useState(opened)
-
-  const router = useRouter()
 
   const closeDrawer = useCallback(() => {
     setDrawerOpen(false)

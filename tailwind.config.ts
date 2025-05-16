@@ -44,9 +44,9 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'navbar-fade-in': 'navbar-fade-in 2.5s ease-in-out both',
-        'slide-up': 'slide-up 2s ease-out both',
-        'fade-in': 'fade-in 2s ease-in-out both',
+        'navbar-fade-in': 'navbar-fade-in 1.5s ease-in-out both',
+        'slide-up': 'slide-up 1s ease-out both',
+        'fade-in': 'fade-in 1s ease-in-out both',
       },
     },
   },

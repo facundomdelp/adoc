@@ -69,15 +69,11 @@ const Onboarding = () => {
             style={{ opacity: imageStates['logo'] === 'loaded' ? 0 : 0.3 }}
           />
           <Image
-            width={250}
-            height={250}
+            width={225}
+            height={373.645}
             src='/logos/adoc_bordeaux_white_text.png'
             alt='Logo Adoc'
-            // onLoad={() => setImageStates((prev) => ({ ...prev, logo: 'loaded' }))}
-            className={cn(
-              'z-20 shrink px-4'
-              // imageStates['logo'] === 'loaded' ? 'opacity-100' : 'opacity-0'
-            )}
+            className='z-20'
           />
         </div>
       </div>
@@ -85,7 +81,7 @@ const Onboarding = () => {
         href='#empresa'
         className={cn(
           'absolute bottom-4 text-white cursor-pointer scroll-smooth',
-          'opacity-0 animate-fade-in delay-1000'
+          'opacity-0 animate-fade-in delay-500'
         )}
       >
         <ChevronDown className='size-12' />
