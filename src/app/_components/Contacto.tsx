@@ -4,7 +4,7 @@ import { InstagramIcon, MailIcon, MapPin, PhoneIcon } from 'lucide-react'
 
 const CONTACT_INFO = [
   { slug: 'phone-1', Icon: PhoneIcon, data: '+54 911 5043-8724 (Gonzalo)', link: '' },
-  { slug: 'phone-2', Icon: PhoneIcon, data: '+54 911 5940-5008 (Manuel)', link: '' },
+  { slug: 'phone-2', Icon: PhoneIcon, data: '+54 911 6834-4706 (Camilo)', link: '' },
   { slug: 'mail', Icon: MailIcon, data: 'info@adocmateriales.com', link: 'mailto:info@adocmateriales.com' },
   { slug: 'instagram', Icon: InstagramIcon, data: '/adocmateriales', link: 'https://instagram.com/adocmateriales' },
   { slug: 'address', Icon: MapPin, data: 'AU Ramal Pilar, KM 57', link: '' },
